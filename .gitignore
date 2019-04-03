@@ -1,0 +1,7 @@
+.idea/
+.web/
+*.pyc
+db.sqlight3
+__pycache__
+/staticfiles
+.env
