@@ -16,6 +16,7 @@ Including another URLconf
 from workshop.core.views import home,about
 from django.contrib import admin
 from django.urls import path
+from workshop.subscriptions.views import detail
 
 from workshop.subscriptions.views import subscription
 
@@ -24,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/',about),
     path('subscription/',subscription),
+    path('subscription/<int:pk>/', detail),
 ]
 
 

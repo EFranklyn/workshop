@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'workshop.core',
-    'workshop.subscriptions',
+    'workshop.subscriptions.apps.SubscriptionsConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +127,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+'''EMAIL_BACKEND = config('EMAIL BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', defaut=True, cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')'''
+
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')

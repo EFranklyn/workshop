@@ -1,0 +1,16 @@
+Ola! {{ subscription.name))
+
+Obrigado por se Inscrever.
+
+Confira os dados fornecidos na sua inscrição:
+
+Nome: {{ subscription.name }}
+CPF: {{ subscription.cpf }}
+Email: {{ subscription.email }}
+Telefone: {{ subscription.phone }}
+
+Em breve nossa equipe entrara em contato
+
+Atenciosamente
+
+coordenação

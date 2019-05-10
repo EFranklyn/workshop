@@ -147,7 +147,7 @@
 			<div class="row">
 				<div class="col">
 					<div class="home_content d-flex flex-row align-items-end justify-content-start">
-						<div class="current_page">Inscrição</div>
+						<div class="current_page">Confirmação de Inscrição</div>
 						<div class="breadcrumbs ml-auto">
 							<ul>
 								<li><a href="/">Home</a></li>
@@ -182,61 +182,30 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-8">
 				<div class="contact_form_container">
-					<div class="contact_form_title">Formulário de Inscrição</div>
-					{% if messages %}
-						{% for message in messages %}
-							<div>
-								<p>{{message}}</p>
-							</div>
-						{% endfor %}
-					{% endif %}
-					<form action="." class="contact_form" id="contact_form" method="post">
-						{% csrf_token %}
-						{{form.non_field_errors}}
-						{{form.name.errors}}
-						{{form.name}}
-						{{form.cpf.errors}}
-						{{form.cpf}}
-						{{form.email.errors}}
-						{{form.email}}
-						{{form.phone.errors}}
-						{{form.phone}}
-						<button type="submit" class="button contact_button"><span>Enviar</span></button>
-					</form>
-				</div>
-			</div>
-			<div class="col-lg-5 offset-lg-1">
-				<div class="contact_info_container">
-					<div>
-						<a href="#">
-							<div class="logo_container d-flex flex-row align-items-start justify-content-start">
-								<div class="logo_image"><div><img src="{% static 'images/logo.png' %}" alt=""></div></div>
-								<div class="logo_content">
-									<div id="logo_text" class="logo_text logo_text_not_ie">Fasa Workshop</div>
-									<div class="logo_sub">Agosto 2019 - Faculdades Santo Agostinho - Montes Claros</div>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="contact_info_list_container">
-						<ul class="contact_info_list">
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="contact_info_icon text-center"><img src="{% static 'images/contact_1.png' %}" alt=""></div></div>
-								<div class="contact_info_text">Blvd Libertad, 34 m05200 Los Angeles, CA</div>
-							</li>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="contact_info_icon text-center"><img src="{% static 'images/contact_2.png' %}" alt=""></div></div>
-								<div class="contact_info_text">0034 37483 2445 322</div>
-							</li>
-							<li class="d-flex flex-row align-items-start justify-content-start">
-								<div><div class="contact_info_icon text-center"><img src="{% static 'images/contact_3.png' %}" alt=""></div></div>
-								<div class="contact_info_text">hello@company.com</div>
-							</li>
-						</ul>
-					</div>
-					<div class="contact_info_pin"><div></div></div>
+					<div class="contact_form_title">Bem-Vindo ao Workshop Fasa</div>
+		            <!-- OVERVIEW -->
+                    <br>
+        <section id="#detail">
+        	<div class="contact_form_title">
+                <h3>Obrigado por se inscrever.</h3>
+                <div>
+                    <p>Estes foram os dados que nos forneceu em sua inscrição:</p>
+
+                    <ul>
+                        <li>Nome: {{subscription.name}}</li>
+                        <li>CPF: {{subscription.cpf}}</li>
+                        <li>Email: {{subscription.email}}</li>
+                        <li>Telefone: {{subscription.phone}}</li>
+                    </ul>
+                    <br>
+                    <p>Em breve nossa equipe irá entrar em contato com você
+                        para finalizar o processo de inscrição.</p>
+
+                </div>
+            </div>
+        </section>
 				</div>
 			</div>
 		</div>
